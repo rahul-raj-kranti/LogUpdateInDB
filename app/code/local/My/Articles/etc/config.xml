@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <My_Articles>
+            <version>1.0.0</version>
+        </My_Articles>
+    </modules>
+    <!-- Code for controller -->
+     <frontend>
+       <routers>
+           <marticles>
+               <use>standard</use>
+               <args>
+                   <module>My_Articles</module>
+                   <frontName>articles</frontName>
+               </args>
+           </marticles>
+       </routers>
+   </frontend>
+   <!-- observers calling -->
+     <global>
+        <models>
+            <My_Articles>
+                <class>My_Articles_Model</class>
+            </My_Articles>
+        </models>
+      </global>  
+      <global>
+        <events>
+            <sales_order_place_after><!-- observe the event -->
+                <observers>
+                    <My_Articles>
+                        <class>My_Articles/observer</class>
+                        <method>LogUpdatesFunction</method>
+                    </My_Articles>
+                </observers>
+            </sales_order_place_after>
+        </events>
+    </global>
+   <global>
+        <helpers>
+            <myarticles>
+                <class>My_Articles_Helper</class>
+            </myarticles>
+        </helpers>
+   <!-- Code for models -->
+    <models>
+        <myarticles>
+            <!-- We created a class My_Articles_Model_Articles, in this parameter, we only specify the path to the file My_Articles_Model without the filename Articles -->
+            <class>My_Articles_Model</class>
+            <resourceModel>myarticles_recource</resourceModel>
+        </myarticles>
+        <!-- The code for the model resources -->
+        <myarticles_recource>
+            <class>My_Articles_Model_Resource</class>
+            <entities>
+                <table_myarticles>
+                    <table>my_articles</table>
+                </table_myarticles>
+            </entities>
+        </myarticles_recource>
+    </models>
+       <!-- Code for adding tables to the database -->
+       <resources>
+           <marticles_setup>
+               <setup>
+                   <module>My_Articles</module>
+               </setup>
+           </marticles_setup>
+       </resources>
+   </global>
+</config>

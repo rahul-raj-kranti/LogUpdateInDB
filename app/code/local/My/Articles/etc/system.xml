@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+     <!-- <tabs>
+        <sales translate="label"  module="sales">
+            <label>Sales</label>
+            <sort_order>400</sort_order>
+        </sales>
+    </tabs> -->
+    <sections>
+         <!-- <sales_log translate="label"  module="myarticles" >
+            <label>Sales Log</label>
+            <tab>sales</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>301</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store> -->
+        <sales>
+            <groups>
+                <backend translate="label" >
+                    <label>Backend</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <PostUrl translate="label" >
+                            <label>PostUrl</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </PostUrl>
+                    </fields>
+                </backend>
+            </groups>
+         </sales>
+    </sections>
+</config> 
+
